@@ -56,9 +56,12 @@ struct OnboardingView: View {
                     Spacer()
                     
                     Button(action: {
+                        print("🔘 Button tapped - currentStep: \(currentStep), steps.count: \(steps.count)")
                         if currentStep < steps.count - 1 {
+                            print("➡️ Moving to next step")
                             currentStep += 1
                         } else {
+                            print("✅ Completing onboarding")
                             saveConsentAndComplete()
                         }
                     }) {
@@ -92,28 +95,34 @@ struct OnboardingView: View {
     }
     
     private func saveConsentAndComplete() {
+        print("💾 Starting saveConsentAndComplete...")
+        
         // Save consent record using the shared persistence controller
         let context = PersistenceController.shared.container.viewContext
         
+        print("📝 Creating consent record...")
         guard ConsentRecord.create(
             scopes: ["usage_stats", "notifications", "widgets", "app_intents"],
             language: language,
             version: "1.0",
             in: context
         ) != nil else {
-            print("Failed to create consent record")
+            print("❌ Failed to create consent record")
             // Still proceed to avoid blocking user
+            print("🚀 Calling onComplete() anyway...")
             onComplete()
             return
         }
         
         do {
             try context.save()
-            print("Consent saved successfully")
+            print("✅ Consent saved successfully")
+            print("🚀 Calling onComplete()...")
             onComplete()
         } catch {
-            print("Error saving consent: \(error)")
+            print("❌ Error saving consent: \(error)")
             // Still proceed to avoid blocking user
+            print("🚀 Calling onComplete() anyway...")
             onComplete()
         }
     }
