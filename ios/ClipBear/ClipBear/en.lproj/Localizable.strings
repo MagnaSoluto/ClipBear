@@ -1,0 +1,115 @@
+/* 
+  Localizable.strings
+  ClipBear
+  
+  English localization for ClipBear MVP
+*/
+
+// Onboarding
+"onboarding.welcome.title" = "Welcome to ClipBear!";
+"onboarding.welcome.subtitle" = "Your digital companion that observes your habits and offers helpful suggestions.";
+"onboarding.privacy.title" = "Privacy First";
+"onboarding.privacy.content" = "• We never read your messages\n• We only detect which app is in the foreground\n• All data stays on your device\n• You can delete or export your data at any time";
+"onboarding.permissions.title" = "Required Permissions";
+"onboarding.permissions.content" = "• Notifications: To show helpful suggestions\n• Widgets: To display companion on home screen\n• App Intents: For quick actions without opening the app\n• All permissions are optional and can be revoked";
+"onboarding.complete.title" = "Ready to Start!";
+"onboarding.complete.content" = "I accept the privacy terms and want to use ClipBear.";
+
+// Navigation
+"button.back" = "Back";
+"button.next" = "Next";
+"button.get_started" = "Get Started";
+"button.cancel" = "Cancel";
+"button.ok" = "OK";
+
+// Language
+"language.title" = "Language";
+"language.english" = "English";
+"language.portuguese" = "Português";
+
+// Main Screen
+"main.status" = "Status";
+"main.overlay" = "In-app Companion";
+"main.enabled" = "Enabled";
+"main.disabled" = "Disabled";
+"main.suggestions_today" = "Suggestions today";
+"main.latest_suggestion" = "Latest Suggestion";
+"main.tinker_says" = "Tinker says:";
+"main.companion_control" = "Companion Control";
+"main.companion_description" = "Enable the in-app floating companion";
+"main.demo_actions" = "Demo Actions";
+"main.demo_description" = "Try out fake integrations";
+"main.order_food" = "🍕 Order Food";
+"main.book_table" = "🍽️ Book Table";
+
+// Settings
+"settings.title" = "Settings";
+"settings.suggestion_intensity" = "Suggestion Intensity";
+"settings.intensity_description" = "How often should Tinker make suggestions?";
+"settings.basic_intensity" = "Basic (1-2/day)";
+"settings.proactive_intensity" = "Proactive (up to 4/day)";
+"settings.snooze_suggestions" = "Snooze Suggestions";
+"settings.snooze_description" = "Temporarily pause suggestions";
+"settings.snooze_1_hour" = "1 Hour";
+"settings.snooze_24_hours" = "24 Hours";
+"settings.diagnostics" = "Diagnostics";
+"settings.diagnostics_description" = "Enable local logging for debugging (data stays on device)";
+"settings.data_management" = "Data Management";
+"settings.data_description" = "Manage your data and privacy";
+"settings.export_data" = "Export Data";
+"settings.delete_all_data" = "Delete All Data";
+
+// Suggestions
+"suggestion.take_break" = "Take a short break? You've been using your phone quite a bit today.";
+"suggestion.whatsapp_important" = "Need to reach someone important? You've opened WhatsApp quite a bit.";
+"suggestion.evening_relax" = "Want to relax with something else? You've been on social media quite a bit.";
+"suggestion.order_food" = "Shall I order food for you?";
+"suggestion.book_table" = "Want me to book a table somewhere?";
+
+// Accessibility
+"accessibility.tinker_avatar" = "Tinker, companion avatar, state: %@";
+"accessibility.tinker_idle" = "idle";
+"accessibility.tinker_suggest" = "suggesting";
+"accessibility.tinker_speak" = "speaking";
+"accessibility.language_button" = "Select %@ language";
+"accessibility.intensity_button" = "Select %@ intensity";
+"accessibility.snooze_button" = "Snooze for %@";
+"accessibility.diagnostics_toggle" = "Enable diagnostics logging";
+"accessibility.export_button" = "Export all data";
+"accessibility.delete_button" = "Delete all data";
+"accessibility.suggestion_card" = "Suggestion: %@";
+"accessibility.feedback_accept" = "Accept suggestion";
+"accessibility.feedback_reject" = "Reject suggestion";
+"accessibility.overlay_toggle" = "Toggle in-app companion";
+"accessibility.settings_button" = "Open settings";
+"accessibility.back_button" = "Go back";
+"accessibility.consent_checkbox" = "Accept privacy terms";
+"accessibility.suggestion_explanation" = "Explanation: %@";
+"accessibility.status_card" = "Status: %@ suggestions today";
+"accessibility.demo_button" = "Try demo: %@";
+
+// Explainability
+"explanation.screen_restlessness" = "Because you turned your screen on/off %d times in %d minutes";
+"explanation.whatsapp_focus" = "Because you opened WhatsApp %d times in %d minutes";
+"explanation.evening_leisure" = "Because you spent %d minutes on social apps after 9 PM";
+
+// Demo
+"demo.title" = "Integration Demos";
+"demo.description" = "Choose a demonstration to try:";
+"demo.food_order" = "Order Food";
+"demo.food_order_description" = "Simulate a food order";
+"demo.table_booking" = "Book Table";
+"demo.table_booking_description" = "Simulate a table booking";
+"demo.confirmation" = "Confirmation";
+"demo.food_confirmed" = "🍕 Food order confirmed! (Demo - not real)";
+"demo.table_confirmed" = "🍽️ Table booked successfully! (Demo - not real)";
+
+// Feedback
+"feedback.accept" = "👍";
+"feedback.reject" = "👎";
+"feedback.accept_label" = "Accept suggestion";
+"feedback.reject_label" = "Reject suggestion";
+
+// Notifications
+"notification.accept" = "👍 Accept";
+"notification.reject" = "👎 Reject";

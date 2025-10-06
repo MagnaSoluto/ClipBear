@@ -1,0 +1,115 @@
+/* 
+  Localizable.strings
+  ClipBear
+  
+  Portuguese localization for ClipBear MVP
+*/
+
+// Onboarding
+"onboarding.welcome.title" = "Bem-vindo ao ClipBear!";
+"onboarding.welcome.subtitle" = "Seu companheiro digital que observa seus hábitos e oferece sugestões úteis.";
+"onboarding.privacy.title" = "Privacidade Primeiro";
+"onboarding.privacy.content" = "• Nunca lemos suas mensagens\n• Apenas detectamos qual app está em primeiro plano\n• Todos os dados ficam no seu dispositivo\n• Você pode deletar ou exportar seus dados a qualquer momento";
+"onboarding.permissions.title" = "Permissões Necessárias";
+"onboarding.permissions.content" = "• Notificações: Para mostrar sugestões úteis\n• Widgets: Para exibir companheiro na tela inicial\n• App Intents: Para ações rápidas sem abrir o app\n• Todas as permissões são opcionais e podem ser revogadas";
+"onboarding.complete.title" = "Pronto para Começar!";
+"onboarding.complete.content" = "Aceito os termos de privacidade e quero usar o ClipBear.";
+
+// Navigation
+"button.back" = "Voltar";
+"button.next" = "Próximo";
+"button.get_started" = "Começar";
+"button.cancel" = "Cancelar";
+"button.ok" = "OK";
+
+// Language
+"language.title" = "Idioma";
+"language.english" = "English";
+"language.portuguese" = "Português";
+
+// Main Screen
+"main.status" = "Status";
+"main.overlay" = "Companheiro In-app";
+"main.enabled" = "Habilitado";
+"main.disabled" = "Desabilitado";
+"main.suggestions_today" = "Sugestões hoje";
+"main.latest_suggestion" = "Última Sugestão";
+"main.tinker_says" = "Tinker diz:";
+"main.companion_control" = "Controle do Companheiro";
+"main.companion_description" = "Habilitar o companheiro flutuante in-app";
+"main.demo_actions" = "Ações de Demo";
+"main.demo_description" = "Experimente integrações falsas";
+"main.order_food" = "🍕 Pedir Comida";
+"main.book_table" = "🍽️ Reservar Mesa";
+
+// Settings
+"settings.title" = "Configurações";
+"settings.suggestion_intensity" = "Intensidade de Sugestões";
+"settings.intensity_description" = "Com que frequência o Tinker deve fazer sugestões?";
+"settings.basic_intensity" = "Básico (1-2/dia)";
+"settings.proactive_intensity" = "Proativo (até 4/dia)";
+"settings.snooze_suggestions" = "Adiar Sugestões";
+"settings.snooze_description" = "Pausar sugestões temporariamente";
+"settings.snooze_1_hour" = "1 Hora";
+"settings.snooze_24_hours" = "24 Horas";
+"settings.diagnostics" = "Diagnósticos";
+"settings.diagnostics_description" = "Habilitar logs locais para debug (dados ficam no dispositivo)";
+"settings.data_management" = "Gerenciamento de Dados";
+"settings.data_description" = "Gerencie seus dados e privacidade";
+"settings.export_data" = "Exportar Dados";
+"settings.delete_all_data" = "Deletar Todos os Dados";
+
+// Suggestions
+"suggestion.take_break" = "Que tal fazer uma pausa? Você está mexendo no celular bastante hoje.";
+"suggestion.whatsapp_important" = "Precisa falar com alguém importante? Está abrindo o WhatsApp bastante.";
+"suggestion.evening_relax" = "Que tal relaxar com outra coisa? Está muito tempo nas redes sociais.";
+"suggestion.order_food" = "Quer que eu peça comida para você?";
+"suggestion.book_table" = "Quer que eu reserve uma mesa em algum lugar?";
+
+// Accessibility
+"accessibility.tinker_avatar" = "Tinker, avatar companheiro, estado: %@";
+"accessibility.tinker_idle" = "ocioso";
+"accessibility.tinker_suggest" = "sugerindo";
+"accessibility.tinker_speak" = "falando";
+"accessibility.language_button" = "Selecionar idioma %@";
+"accessibility.intensity_button" = "Selecionar intensidade %@";
+"accessibility.snooze_button" = "Adiar por %@";
+"accessibility.diagnostics_toggle" = "Habilitar logs de diagnóstico";
+"accessibility.export_button" = "Exportar todos os dados";
+"accessibility.delete_button" = "Deletar todos os dados";
+"accessibility.suggestion_card" = "Sugestão: %@";
+"accessibility.feedback_accept" = "Aceitar sugestão";
+"accessibility.feedback_reject" = "Rejeitar sugestão";
+"accessibility.overlay_toggle" = "Alternar companheiro in-app";
+"accessibility.settings_button" = "Abrir configurações";
+"accessibility.back_button" = "Voltar";
+"accessibility.consent_checkbox" = "Aceitar termos de privacidade";
+"accessibility.suggestion_explanation" = "Explicação: %@";
+"accessibility.status_card" = "Status: %@ sugestões hoje";
+"accessibility.demo_button" = "Experimentar demo: %@";
+
+// Explainability
+"explanation.screen_restlessness" = "Porque você ligou/desligou a tela %d vezes em %d minutos";
+"explanation.whatsapp_focus" = "Porque você abriu o WhatsApp %d vezes em %d minutos";
+"explanation.evening_leisure" = "Porque você passou %d minutos em redes sociais após 21h";
+
+// Demo
+"demo.title" = "Demos de Integração";
+"demo.description" = "Escolha uma demonstração para experimentar:";
+"demo.food_order" = "Pedir Comida";
+"demo.food_order_description" = "Simule um pedido de comida";
+"demo.table_booking" = "Reservar Mesa";
+"demo.table_booking_description" = "Simule uma reserva de mesa";
+"demo.confirmation" = "Confirmação";
+"demo.food_confirmed" = "🍕 Pedido de comida confirmado! (Demo - não é real)";
+"demo.table_confirmed" = "🍽️ Mesa reservada com sucesso! (Demo - não é real)";
+
+// Feedback
+"feedback.accept" = "👍";
+"feedback.reject" = "👎";
+"feedback.accept_label" = "Aceitar sugestão";
+"feedback.reject_label" = "Rejeitar sugestão";
+
+// Notifications
+"notification.accept" = "👍 Aceitar";
+"notification.reject" = "👎 Rejeitar";
