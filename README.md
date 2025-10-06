@@ -1,8 +1,33 @@
-# ClipBear MVP - Companion Overlay
+# 🐻 ClipBear MVP - Companion Overlay
+
+[![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)](https://developer.apple.com/ios/)
+[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org/)
+[![TestFlight](https://img.shields.io/badge/TestFlight-Ready-brightgreen.svg)](https://developer.apple.com/testflight/)
+[![Build](https://img.shields.io/badge/Build-Passing-success.svg)](https://github.com/MagnaSoluto/ClipBear)
+[![Tests](https://img.shields.io/badge/Tests-30%2B%20Passing-success.svg)](https://github.com/MagnaSoluto/ClipBear)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Privacy-First Companion Assistant
 
 ClipBear is a privacy-first companion assistant with a nostalgic popup/bubble style (like Clippy). This MVP focuses on testing user engagement with a floating companion that notices behaviors and interacts through simple suggestions.
+
+---
+
+## 🚀 **Quick Start**
+
+### **For Immediate Deploy**:
+📖 Read **[NEXT_STEPS.md](NEXT_STEPS.md)** - Get to TestFlight in 50 minutes!
+
+### **For Complete Overview**:
+📖 Read **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** - Full project summary
+
+### **For Testing**:
+📖 Read **[ios/ClipBear/TESTFLIGHT_READY.md](ios/ClipBear/TESTFLIGHT_READY.md)** - Complete QA checklist
+
+### **For Setup**:
+📖 Read **[ios/ClipBear/APP_GROUP_SETUP.md](ios/ClipBear/APP_GROUP_SETUP.md)** - App Group configuration
+
+---
 
 ## 🎯 MVP Goals
 
