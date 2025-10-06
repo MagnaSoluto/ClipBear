@@ -38,11 +38,18 @@ class LocalizationManager: ObservableObject {
     }
     
     func localizedString(_ key: String) -> String {
+        // Try current language bundle first
         let localizedValue = currentBundle.localizedString(forKey: key, value: nil, table: nil)
-        // If key is returned unchanged, bundle didn't find translation
-        // Fall back to main bundle as safety net
+        
+        // If key is returned unchanged, try main bundle
         if localizedValue == key {
-            return Bundle.main.localizedString(forKey: key, value: key, table: nil)
+            let mainBundleValue = Bundle.main.localizedString(forKey: key, value: nil, table: nil)
+            if mainBundleValue != key {
+                return mainBundleValue
+            }
+            // If still not found, return the key itself as fallback
+            print("⚠️ Missing localization for key: \(key)")
+            return key
         }
         return localizedValue
     }

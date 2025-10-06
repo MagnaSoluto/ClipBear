@@ -61,8 +61,11 @@ struct ContentView: View {
     }
     
     private func checkConsentAndNavigate() {
+        // Use the shared persistence controller
+        let context = PersistenceController.shared.container.viewContext
+        
         // Check if Core Data is ready
-        guard viewContext.persistentStoreCoordinator != nil else {
+        guard context.persistentStoreCoordinator != nil else {
             print("Core Data not ready yet, defaulting to onboarding")
             currentView = "onboarding"
             return
@@ -74,7 +77,7 @@ struct ContentView: View {
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
         
         do {
-            let consents = try viewContext.fetch(request)
+            let consents = try context.fetch(request)
             let currentPolicyVersion = "1.0" // Update this when policy changes
             
             if let consent = consents.first, consent.isValidForPolicy(currentPolicyVersion) {

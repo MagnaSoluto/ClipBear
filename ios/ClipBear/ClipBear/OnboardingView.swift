@@ -92,12 +92,14 @@ struct OnboardingView: View {
     }
     
     private func saveConsentAndComplete() {
-        // Save consent record
+        // Save consent record using the shared persistence controller
+        let context = PersistenceController.shared.container.viewContext
+        
         guard ConsentRecord.create(
             scopes: ["usage_stats", "notifications", "widgets", "app_intents"],
             language: language,
             version: "1.0",
-            in: viewContext
+            in: context
         ) != nil else {
             print("Failed to create consent record")
             // Still proceed to avoid blocking user
@@ -106,7 +108,7 @@ struct OnboardingView: View {
         }
         
         do {
-            try viewContext.save()
+            try context.save()
             print("Consent saved successfully")
             onComplete()
         } catch {
