@@ -1,0 +1,124 @@
+{
+  "project": {
+    "name": "ClipBear MVP",
+    "version": "1.0.0",
+    "description": "Privacy-first companion assistant with nostalgic popup/bubble style",
+    "type": "mobile_app",
+    "platforms": ["android", "ios"],
+    "languages": ["en", "pt"]
+  },
+  "features": {
+    "overlay_bubble": {
+      "status": "implemented",
+      "description": "Floating avatar Tinker with drag and dock functionality",
+      "components": ["TinkerAvatar", "OverlayBubble", "OverlayService"]
+    },
+    "onboarding": {
+      "status": "implemented",
+      "description": "Language detection and privacy consent flow",
+      "components": ["OnboardingScreen", "OnboardingView"]
+    },
+    "encrypted_storage": {
+      "status": "implemented",
+      "description": "Local encrypted storage with Room + SQLCipher",
+      "components": ["ClipBearDatabase", "BehaviorDao", "SuggestionDao", "SettingsDao", "MetricsDao"]
+    },
+    "behavioral_rules": {
+      "status": "implemented",
+      "description": "Behavioral pattern detection and suggestion engine",
+      "components": ["RuleEngine", "ScreenRestlessnessRule", "WhatsAppFocusRule", "EveningLeisureRule"]
+    },
+    "conversation_stub": {
+      "status": "implemented",
+      "description": "Predefined conversation phrases in EN/PT",
+      "components": ["ConversationStub", "PhraseCategory"]
+    },
+    "fake_integrations": {
+      "status": "implemented",
+      "description": "Demo integrations for food ordering and table booking",
+      "components": ["FakeIntegrationDemo", "DemoView"]
+    },
+    "settings": {
+      "status": "implemented",
+      "description": "User preferences and controls",
+      "components": ["SettingsScreen", "SettingsView"]
+    },
+    "feedback_metrics": {
+      "status": "implemented",
+      "description": "Local metrics collection and feedback system",
+      "components": ["MetricsRepository", "MetricsDao", "MetricTypes"]
+    },
+    "beta_testing": {
+      "status": "prepared",
+      "description": "Beta testing framework and success metrics",
+      "components": ["BETA_PLAN.md", "Survey questions", "Success criteria"]
+    }
+  },
+  "architecture": {
+    "android": {
+      "ui": "Jetpack Compose",
+      "navigation": "Navigation Compose",
+      "database": "Room + SQLCipher",
+      "dependency_injection": "Hilt",
+      "coroutines": "Kotlin Coroutines",
+      "permissions": "Accompanist Permissions"
+    },
+    "ios": {
+      "ui": "SwiftUI",
+      "navigation": "NavigationView",
+      "database": "CoreData (encrypted)",
+      "dependency_injection": "Manual",
+      "concurrency": "Async/Await",
+      "permissions": "Native permission system"
+    }
+  },
+  "privacy": {
+    "data_collection": "local_only",
+    "encryption": "device_specific_keys",
+    "cloud_sync": false,
+    "analytics": "local_only",
+    "user_control": "full_control",
+    "data_export": true,
+    "data_deletion": true
+  },
+  "beta_metrics": {
+    "acceptance_rate_threshold": 0.15,
+    "conversational_engagement_threshold": 1.0,
+    "d7_retention_threshold": 0.25,
+    "privacy_satisfaction_threshold": 0.80,
+    "overall_satisfaction_threshold": 3.5
+  },
+  "development_status": {
+    "scaffold": "completed",
+    "overlay_bubble": "completed",
+    "onboarding": "completed",
+    "encrypted_storage": "completed",
+    "behavioral_rules": "completed",
+    "conversation_stub": "completed",
+    "fake_integrations": "completed",
+    "settings": "completed",
+    "feedback_metrics": "completed",
+    "beta_testing": "completed",
+    "accessibility": "completed",
+    "permissions": "completed",
+    "testing": "completed",
+    "documentation": "completed"
+  },
+  "quality_gates": {
+    "string_coverage": "100% EN/PT",
+    "accessibility": "TalkBack/VoiceOver compliant",
+    "battery_impact": "≤ +5% in 24h",
+    "performance": "Launch < 3s, Memory < 100MB",
+    "security": "No network calls in release",
+    "privacy": "LGPD/GDPR compliant"
+  },
+  "testing_framework": {
+    "unit_tests": "Android: JUnit, iOS: XCTest",
+    "ui_tests": "Android: Espresso, iOS: XCUITest",
+    "migration_tests": "Room/CoreData migration validation",
+    "accessibility_tests": "Automated A11y testing",
+    "battery_tests": "24h battery impact measurement",
+    "string_coverage": "Automated EN/PT coverage check"
+  }
+}
+
