@@ -193,13 +193,62 @@ class HomePage extends StatelessWidget {
 
               SizedBox(height: AppDimensions.space5),
 
+              // Suggestions Quick Access Card
+              Card(
+                child: InkWell(
+                  onTap: () => Get.toNamed('/suggestions'),
+                  borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
+                  child: Padding(
+                    padding: EdgeInsets.all(AppDimensions.paddingMedium),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            gradient: AppColors.tinkerGradient,
+                            borderRadius: BorderRadius.circular(AppDimensions.radiusSmall),
+                          ),
+                          child: const Icon(
+                            Icons.lightbulb,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                        ),
+                        SizedBox(width: AppDimensions.space3),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.suggestions_title,
+                                style: AppTextStyles.titleMedium(),
+                              ),
+                              Text(
+                                'Ver sugestões do Tinker',
+                                style: AppTextStyles.bodySmall(
+                                  color: AppColors.textSecondaryLight,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Icon(Icons.arrow_forward_ios, size: 16),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: AppDimensions.space4),
+
               // Action Buttons
               Row(
                 children: [
                   Expanded(
-                    child: ElevatedButton.icon(
+                    child: OutlinedButton.icon(
                       onPressed: () {
-                        // TODO: Start onboarding
+                        Get.toNamed('/onboarding');
                       },
                       icon: const Icon(Icons.play_arrow),
                       label: Text(l10n.home_buttonStartTour),
