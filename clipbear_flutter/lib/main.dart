@@ -6,6 +6,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'core/theme/app_theme.dart';
 import 'core/localization/locale_controller.dart';
 import 'features/home/presentation/pages/home_page.dart';
+import 'features/onboarding/presentation/pages/onboarding_page.dart';
+import 'features/onboarding/presentation/controllers/onboarding_controller.dart';
 import 'core/localization/l10n/app_localizations.dart';
 
 void main() async {
@@ -23,11 +25,20 @@ void main() async {
   // Initialize LocaleController
   Get.put(LocaleController());
 
-  runApp(const ClipBearApp());
+  // Check onboarding status
+  final hasCompletedOnboarding = 
+      await OnboardingController.hasCompletedOnboarding();
+
+  runApp(ClipBearApp(showOnboarding: !hasCompletedOnboarding));
 }
 
 class ClipBearApp extends StatelessWidget {
-  const ClipBearApp({super.key});
+  final bool showOnboarding;
+
+  const ClipBearApp({
+    super.key,
+    this.showOnboarding = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +64,22 @@ class ClipBearApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       
-      // Home
-      home: const HomePage(),
+      // Initial route based on onboarding status
+      initialRoute: showOnboarding ? '/onboarding' : '/home',
+      
+      // Routes
+      getPages: [
+        GetPage(
+          name: '/onboarding',
+          page: () => const OnboardingPage(),
+          transition: Transition.fadeIn,
+        ),
+        GetPage(
+          name: '/home',
+          page: () => const HomePage(),
+          transition: Transition.fadeIn,
+        ),
+      ],
       
       // GetX configuration
       defaultTransition: Transition.cupertino,
