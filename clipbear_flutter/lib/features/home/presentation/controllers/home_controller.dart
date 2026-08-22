@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import '../../../../core/widgets/tinker_avatar.dart';
+import '../../../../services/storage_service.dart';
 
 class HomeController extends GetxController {
   final Rx<TinkerState> avatarState = TinkerState.idle.obs;
@@ -7,6 +9,8 @@ class HomeController extends GetxController {
   final RxInt acceptedCount = 0.obs;
   final RxInt rejectedCount = 0.obs;
   final RxInt postponedCount = 0.obs;
+
+  final _storage = StorageService.instance;
 
   @override
   void onInit() {
@@ -16,11 +20,15 @@ class HomeController extends GetxController {
   }
 
   Future<void> _loadStats() async {
-    // TODO: Load from persistence
-    suggestionsToday.value = 0;
-    acceptedCount.value = 0;
-    rejectedCount.value = 0;
-    postponedCount.value = 0;
+    try {
+      final stats = await _storage.getTodayStats();
+      acceptedCount.value = stats['accepted'] ?? 0;
+      rejectedCount.value = stats['rejected'] ?? 0;
+      postponedCount.value = stats['postponed'] ?? 0;
+      suggestionsToday.value = stats['total'] ?? 0;
+    } catch (e) {
+      debugPrint('Error loading stats: $e');
+    }
   }
 
   void _scheduleRandomExpressions() {
@@ -38,22 +46,15 @@ class HomeController extends GetxController {
     });
   }
 
-  void onSuggestionAccepted() {
+  Future<void> onSuggestionAccepted() async {
     acceptedCount.value++;
     suggestionsToday.value++;
     avatarState.value = TinkerState.happy;
     
-    Future.delayed(const Duration(seconds: 2), () {
-      if (!isClosed) {
-        avatarState.value = TinkerState.idle;
-      }
-    });
-  }
-
-  void onSuggestionRejected() {
-    rejectedCount.value++;
-    suggestionsToday.value++;
-    avatarState.value = TinkerState.thinking;
+    // Save to storage
+    final today = DateTime.now().toIso8601String().split('T')[0];
+    await _storage.incrementStat('${today}_accepted');
+    await _storage.incrementStat('${today}_total');
     
     Future.delayed(const Duration(seconds: 2), () {
       if (!isClosed) {
@@ -62,10 +63,32 @@ class HomeController extends GetxController {
     });
   }
 
-  void onSuggestionPostponed() {
+  Future<void> onSuggestionRejected() async {
+    rejectedCount.value++;
+    suggestionsToday.value++;
+    avatarState.value = TinkerState.thinking;
+    
+    // Save to storage
+    final today = DateTime.now().toIso8601String().split('T')[0];
+    await _storage.incrementStat('${today}_rejected');
+    await _storage.incrementStat('${today}_total');
+    
+    Future.delayed(const Duration(seconds: 2), () {
+      if (!isClosed) {
+        avatarState.value = TinkerState.idle;
+      }
+    });
+  }
+
+  Future<void> onSuggestionPostponed() async {
     postponedCount.value++;
     suggestionsToday.value++;
     avatarState.value = TinkerState.sleeping;
+    
+    // Save to storage
+    final today = DateTime.now().toIso8601String().split('T')[0];
+    await _storage.incrementStat('${today}_postponed');
+    await _storage.incrementStat('${today}_total');
     
     Future.delayed(const Duration(seconds: 2), () {
       if (!isClosed) {

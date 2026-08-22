@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'core/theme/app_theme.dart';
 import 'core/localization/locale_controller.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/onboarding/presentation/pages/onboarding_page.dart';
 import 'features/onboarding/presentation/controllers/onboarding_controller.dart';
+import 'services/storage_service.dart';
 import 'core/localization/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Hive
-  await Hive.initFlutter();
+  // Initialize Storage Service (Hive)
+  await StorageService.instance.init();
 
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
