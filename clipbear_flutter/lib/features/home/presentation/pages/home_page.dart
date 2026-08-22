@@ -4,7 +4,9 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/localization/locale_controller.dart';
+import '../../../../core/widgets/tinker_avatar.dart';
 import '../../../../core/localization/l10n/app_localizations.dart';
+import '../controllers/home_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,6 +15,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final localeController = Get.find<LocaleController>();
+    final controller = Get.put(HomeController());
     
     return Scaffold(
       appBar: AppBar(
@@ -72,29 +75,21 @@ class HomePage extends StatelessWidget {
               
               SizedBox(height: AppDimensions.space6),
 
-              // Avatar Placeholder
+              // Tinker Avatar (Animated)
               Center(
-                child: Container(
-                  width: AppDimensions.avatarHero,
-                  height: AppDimensions.avatarHero,
-                  decoration: BoxDecoration(
-                    gradient: AppColors.tinkerGradient,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.primary.withValues(alpha: 0.3),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
+                child: Obx(() => GestureDetector(
+                  onTap: () {
+                    controller.avatarState.value = TinkerState.waving;
+                    Future.delayed(const Duration(seconds: 2), () {
+                      controller.avatarState.value = TinkerState.idle;
+                    });
+                  },
+                  child: TinkerAvatar(
+                    size: AppDimensions.avatarHero,
+                    state: controller.avatarState.value,
+                    animate: true,
                   ),
-                  child: Center(
-                    child: Text(
-                      '🤖',
-                      style: TextStyle(fontSize: AppDimensions.space7),
-                    ),
-                  ),
-                ),
+                )),
               ),
 
               SizedBox(height: AppDimensions.space5),
@@ -123,12 +118,14 @@ class HomePage extends StatelessWidget {
                                   style: AppTextStyles.titleLarge(),
                                 ),
                                 SizedBox(height: AppDimensions.space1),
-                                Text(
-                                  l10n.home_noSuggestionsYet,
+                                Obx(() => Text(
+                                  controller.suggestionsToday.value == 0
+                                      ? l10n.home_noSuggestionsYet
+                                      : '${controller.suggestionsToday.value} ${l10n.suggestions_title.toLowerCase()}',
                                   style: AppTextStyles.bodyMedium(
                                     color: AppColors.textSecondaryLight,
                                   ),
-                                ),
+                                )),
                               ],
                             ),
                           ),
@@ -140,24 +137,24 @@ class HomePage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          _buildStatItem(
+                          Obx(() => _buildStatItem(
                             icon: Icons.check_circle_outline,
                             label: l10n.home_statsAccepted,
-                            value: '0',
+                            value: controller.acceptedCount.value.toString(),
                             color: AppColors.success,
-                          ),
-                          _buildStatItem(
+                          )),
+                          Obx(() => _buildStatItem(
                             icon: Icons.cancel_outlined,
                             label: l10n.home_statsRejected,
-                            value: '0',
+                            value: controller.rejectedCount.value.toString(),
                             color: AppColors.error,
-                          ),
-                          _buildStatItem(
+                          )),
+                          Obx(() => _buildStatItem(
                             icon: Icons.schedule,
                             label: l10n.home_statsPostponed,
-                            value: '0',
+                            value: controller.postponedCount.value.toString(),
                             color: AppColors.warning,
-                          ),
+                          )),
                         ],
                       ),
                     ],
