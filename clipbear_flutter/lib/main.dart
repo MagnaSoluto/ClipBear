@@ -6,6 +6,7 @@ import 'core/theme/app_theme.dart';
 import 'core/localization/locale_controller.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/onboarding/presentation/pages/onboarding_page.dart';
+import 'features/settings/presentation/pages/settings_page.dart';
 import 'features/onboarding/presentation/controllers/onboarding_controller.dart';
 import 'services/storage_service.dart';
 import 'core/localization/l10n/app_localizations.dart';
@@ -78,6 +79,11 @@ class ClipBearApp extends StatelessWidget {
           name: '/home',
           page: () => const HomePage(),
           transition: Transition.fadeIn,
+        ),
+        GetPage(
+          name: '/settings',
+          page: () => const SettingsPage(),
+          transition: Transition.rightToLeft,
         ),
       ],
       
