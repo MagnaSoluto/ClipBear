@@ -1,20 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/localization/locale_controller.dart';
+import '../../../../core/localization/l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final localeController = Get.find<LocaleController>();
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '🐻 ClipBear',
+          l10n.home_title,
           style: AppTextStyles.headlineMedium(),
         ),
         actions: [
+          // Language toggle button
+          IconButton(
+            icon: Icon(
+              localeController.isPortuguese
+                  ? Icons.language
+                  : Icons.translate,
+            ),
+            tooltip: localeController.isPortuguese
+                ? 'Switch to English'
+                : 'Mudar para Português',
+            onPressed: () {
+              localeController.toggleLanguage();
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.settings_outlined),
             onPressed: () {
@@ -37,14 +57,14 @@ class HomePage extends StatelessWidget {
             children: [
               // Greeting
               Text(
-                'Olá! 👋',
+                _getGreeting(l10n),
                 style: AppTextStyles.displayMedium(
                   color: AppColors.textPrimaryLight,
                 ),
               ),
               SizedBox(height: AppDimensions.space2),
               Text(
-                'Bem-vindo ao ClipBear Flutter!',
+                l10n.home_welcomeMessage,
                 style: AppTextStyles.bodyLarge(
                   color: AppColors.textSecondaryLight,
                 ),
@@ -99,12 +119,12 @@ class HomePage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Sua Atividade Hoje',
+                                  l10n.home_yourActivityToday,
                                   style: AppTextStyles.titleLarge(),
                                 ),
                                 SizedBox(height: AppDimensions.space1),
                                 Text(
-                                  '0 sugestões recebidas',
+                                  l10n.home_noSuggestionsYet,
                                   style: AppTextStyles.bodyMedium(
                                     color: AppColors.textSecondaryLight,
                                   ),
@@ -122,19 +142,19 @@ class HomePage extends StatelessWidget {
                         children: [
                           _buildStatItem(
                             icon: Icons.check_circle_outline,
-                            label: 'Aceitas',
+                            label: l10n.home_statsAccepted,
                             value: '0',
                             color: AppColors.success,
                           ),
                           _buildStatItem(
                             icon: Icons.cancel_outlined,
-                            label: 'Rejeitadas',
+                            label: l10n.home_statsRejected,
                             value: '0',
                             color: AppColors.error,
                           ),
                           _buildStatItem(
                             icon: Icons.schedule,
-                            label: 'Adiadas',
+                            label: l10n.home_statsPostponed,
                             value: '0',
                             color: AppColors.warning,
                           ),
@@ -155,7 +175,7 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        '🎉 Projeto Flutter Iniciado!',
+                        l10n.home_launchMessage,
                         style: AppTextStyles.headlineSmall(
                           color: Colors.white,
                         ),
@@ -163,7 +183,7 @@ class HomePage extends StatelessWidget {
                       ),
                       SizedBox(height: AppDimensions.space3),
                       Text(
-                        'O ClipBear foi modernizado com Flutter! Agora com design Material 3, animações fluidas e suporte cross-platform.',
+                        l10n.home_launchDescription,
                         style: AppTextStyles.bodyMedium(
                           color: Colors.white.withValues(alpha: 0.9),
                         ),
@@ -185,7 +205,7 @@ class HomePage extends StatelessWidget {
                         // TODO: Start onboarding
                       },
                       icon: const Icon(Icons.play_arrow),
-                      label: const Text('Começar Tour'),
+                      label: Text(l10n.home_buttonStartTour),
                     ),
                   ),
                   SizedBox(width: AppDimensions.space3),
@@ -195,7 +215,7 @@ class HomePage extends StatelessWidget {
                         // TODO: Show about
                       },
                       icon: const Icon(Icons.info_outline),
-                      label: const Text('Sobre'),
+                      label: Text(l10n.home_buttonAbout),
                     ),
                   ),
                 ],
@@ -230,5 +250,19 @@ class HomePage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String _getGreeting(AppLocalizations l10n) {
+    final hour = DateTime.now().hour;
+    
+    if (hour < 12) {
+      return l10n.greeting_morning;
+    } else if (hour < 18) {
+      return l10n.greeting_afternoon;
+    } else if (hour < 22) {
+      return l10n.greeting_evening;
+    } else {
+      return l10n.greeting_night;
+    }
   }
 }

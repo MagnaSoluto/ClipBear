@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/theme/app_theme.dart';
+import 'core/localization/locale_controller.dart';
 import 'features/home/presentation/pages/home_page.dart';
+import 'core/localization/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +20,9 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
+  // Initialize LocaleController
+  Get.put(LocaleController());
+
   runApp(const ClipBearApp());
 }
 
@@ -25,7 +31,9 @@ class ClipBearApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    final localeController = Get.find<LocaleController>();
+    
+    return Obx(() => GetMaterialApp(
       title: 'ClipBear',
       debugShowCheckedModeBanner: false,
       
@@ -35,8 +43,15 @@ class ClipBearApp extends StatelessWidget {
       themeMode: ThemeMode.system,
 
       // Localization
-      locale: Get.deviceLocale,
+      locale: localeController.locale,
       fallbackLocale: const Locale('pt', 'BR'),
+      supportedLocales: LocaleController.supportedLocales,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       
       // Home
       home: const HomePage(),
@@ -44,6 +59,6 @@ class ClipBearApp extends StatelessWidget {
       // GetX configuration
       defaultTransition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 300),
-    );
+    ));
   }
 }

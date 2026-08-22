@@ -1,0 +1,181 @@
+{
+  "@@locale": "en",
+  
+  "appName": "ClipBear",
+  "@appName": {
+    "description": "Application name"
+  },
+  
+  "appTagline": "Your Digital Companion",
+  "@appTagline": {
+    "description": "Application tagline"
+  },
+
+  "common_ok": "OK",
+  "common_cancel": "Cancel",
+  "common_save": "Save",
+  "common_delete": "Delete",
+  "common_edit": "Edit",
+  "common_close": "Close",
+  "common_back": "Back",
+  "common_next": "Next",
+  "common_skip": "Skip",
+  "common_done": "Done",
+  "common_yes": "Yes",
+  "common_no": "No",
+  "common_accept": "Accept",
+  "common_reject": "Reject",
+  "common_loading": "Loading...",
+  "common_error": "Error",
+  "common_success": "Success!",
+
+  "greeting_morning": "Good morning! 👋",
+  "greeting_afternoon": "Good afternoon! 👋",
+  "greeting_evening": "Good evening! 👋",
+  "greeting_night": "Hello! 👋",
+
+  "home_title": "🐻 ClipBear",
+  "home_welcome": "Welcome to ClipBear!",
+  "home_welcomeMessage": "Your digital companion reimagined with Flutter",
+  "home_yourActivityToday": "Your Activity Today",
+  "home_noSuggestionsYet": "0 suggestions received",
+  "home_statsAccepted": "Accepted",
+  "home_statsRejected": "Rejected",
+  "home_statsPostponed": "Postponed",
+  "home_launchMessage": "🎉 Flutter Project Launched!",
+  "home_launchDescription": "ClipBear has been modernized with Flutter! Now with Material Design 3, fluid animations, and cross-platform support.",
+  "home_buttonStartTour": "Start Tour",
+  "home_buttonAbout": "About",
+
+  "onboarding_welcome_title": "Welcome to ClipBear! 🐻",
+  "onboarding_welcome_subtitle": "Your smart and adorable digital companion",
+  "onboarding_welcome_description": "ClipBear observes your habits and offers helpful suggestions to improve your experience, always respecting your privacy.",
+  
+  "onboarding_privacy_title": "Privacy First 🔒",
+  "onboarding_privacy_subtitle": "Your data is yours",
+  "onboarding_privacy_description": "All your data stays on your device. We never send anything to our servers. You have full control.",
+  "onboarding_privacy_point1": "✅ Data stays local",
+  "onboarding_privacy_point2": "✅ No third-party tracking",
+  "onboarding_privacy_point3": "✅ Export and delete anytime",
+  "onboarding_privacy_point4": "✅ Open source auditable code",
+  
+  "onboarding_features_title": "Meet Tinker 🤖",
+  "onboarding_features_subtitle": "Your animated robot friend",
+  "onboarding_features_description": "Tinker is expressive, fun, and here to help. He learns from you and makes suggestions at the right time.",
+  "onboarding_features_point1": "💡 Smart suggestions",
+  "onboarding_features_point2": "🎭 Multiple expressions",
+  "onboarding_features_point3": "🏆 Achievement system",
+  "onboarding_features_point4": "📊 Insights about your habits",
+  
+  "onboarding_permissions_title": "Required Permissions 🔔",
+  "onboarding_permissions_subtitle": "To work better",
+  "onboarding_permissions_description": "ClipBear needs some permissions to offer the best experience. You can skip this step and grant them later.",
+  "onboarding_permissions_notifications": "Notifications",
+  "onboarding_permissions_notifications_desc": "To send helpful suggestions",
+  "onboarding_permissions_usage": "App Usage",
+  "onboarding_permissions_usage_desc": "To understand your habits",
+  "onboarding_permissions_enable": "Enable",
+  "onboarding_permissions_later": "Later",
+  
+  "onboarding_getStarted": "Get Started",
+  "onboarding_skipAll": "Skip All",
+  
+  "settings_title": "Settings",
+  "settings_appearance": "Appearance",
+  "settings_theme": "Theme",
+  "settings_theme_light": "Light",
+  "settings_theme_dark": "Dark",
+  "settings_theme_auto": "Automatic",
+  "settings_accentColor": "Accent Color",
+  "settings_language": "Language",
+  "settings_language_pt": "Português",
+  "settings_language_en": "English",
+  
+  "settings_avatar": "Avatar",
+  "settings_avatar_style": "Avatar Style",
+  "settings_avatar_customize": "Customize Avatar",
+  
+  "settings_notifications": "Notifications",
+  "settings_notifications_enabled": "Notifications Enabled",
+  "settings_notifications_intensity": "Intensity",
+  "settings_notifications_intensity_basic": "Basic",
+  "settings_notifications_intensity_proactive": "Proactive",
+  "settings_notifications_quietHours": "Quiet Hours",
+  "settings_notifications_quietHours_start": "Start",
+  "settings_notifications_quietHours_end": "End",
+  
+  "settings_privacy": "Privacy & Data",
+  "settings_privacy_dataExport": "Export Data",
+  "settings_privacy_dataDelete": "Delete All Data",
+  "settings_privacy_deleteConfirm": "Are you sure you want to delete all data? This action cannot be undone.",
+  "settings_privacy_policy": "Privacy Policy",
+  "settings_privacy_terms": "Terms of Use",
+  
+  "settings_about": "About",
+  "settings_about_version": "Version",
+  "settings_about_credits": "Credits",
+  "settings_about_openSource": "Open Source",
+  
+  "suggestions_title": "Suggestions",
+  "suggestions_latest": "Latest Suggestion",
+  "suggestions_noSuggestions": "No suggestions yet",
+  "suggestions_whyThis": "Why?",
+  "suggestions_timeAgo": "{time} ago",
+  "@suggestions_timeAgo": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "suggestions_accept": "Accept",
+  "suggestions_reject": "No, thanks",
+  "suggestions_postpone": "Remind me later",
+  "suggestions_postpone_30min": "In 30 minutes",
+  "suggestions_postpone_1hour": "In 1 hour",
+  "suggestions_postpone_3hours": "In 3 hours",
+  
+  "history_title": "History",
+  "history_insights": "Your Insights",
+  "history_thisWeek": "This Week",
+  "history_thisMonth": "This Month",
+  "history_allTime": "All Time",
+  "history_suggestionsReceived": "Suggestions Received",
+  "history_acceptanceRate": "Acceptance Rate",
+  "history_timeline": "Timeline",
+  "history_achievements": "Achievements",
+  
+  "achievements_title": "Achievements",
+  "achievements_firstWeek": "First Week Complete",
+  "achievements_firstWeek_desc": "Complete your first week using ClipBear",
+  "achievements_tenAccepted": "10 Suggestions Accepted",
+  "achievements_tenAccepted_desc": "Accept 10 suggestions from Tinker",
+  "achievements_fiftyAccepted": "50 Suggestions Accepted",
+  "achievements_fiftyAccepted_desc": "Accept 50 suggestions from Tinker",
+  "achievements_perfectWeek": "Perfect Week",
+  "achievements_perfectWeek_desc": "Use ClipBear every day for a week",
+  
+  "notifications_newSuggestion_title": "New Suggestion from Tinker 💡",
+  "notifications_newSuggestion_body": "I have a suggestion for you!",
+  "notifications_achievement_title": "Achievement Unlocked! 🎉",
+  "notifications_achievement_body": "You unlocked: {achievement}",
+  "@notifications_achievement_body": {
+    "placeholders": {
+      "achievement": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "errors_generic": "Something went wrong. Please try again.",
+  "errors_network": "No internet connection",
+  "errors_permission_denied": "Permission denied",
+  "errors_dataExport_failed": "Failed to export data",
+  "errors_dataDelete_failed": "Failed to delete data",
+  
+  "success_dataSaved": "Data saved successfully",
+  "success_dataExported": "Data exported successfully",
+  "success_dataDeleted": "Data deleted successfully",
+  "success_settingsSaved": "Settings saved"
+}
