@@ -1,0 +1,181 @@
+{
+  "@@locale": "pt_BR",
+  
+  "appName": "ClipBear",
+  "@appName": {
+    "description": "Nome do aplicativo"
+  },
+  
+  "appTagline": "Seu Companheiro Digital",
+  "@appTagline": {
+    "description": "Slogan do aplicativo"
+  },
+
+  "common_ok": "OK",
+  "common_cancel": "Cancelar",
+  "common_save": "Salvar",
+  "common_delete": "Excluir",
+  "common_edit": "Editar",
+  "common_close": "Fechar",
+  "common_back": "Voltar",
+  "common_next": "Próximo",
+  "common_skip": "Pular",
+  "common_done": "Concluído",
+  "common_yes": "Sim",
+  "common_no": "Não",
+  "common_accept": "Aceitar",
+  "common_reject": "Rejeitar",
+  "common_loading": "Carregando...",
+  "common_error": "Erro",
+  "common_success": "Sucesso!",
+
+  "greeting_morning": "Bom dia! 👋",
+  "greeting_afternoon": "Boa tarde! 👋",
+  "greeting_evening": "Boa noite! 👋",
+  "greeting_night": "Olá! 👋",
+
+  "home_title": "🐻 ClipBear",
+  "home_welcome": "Bem-vindo ao ClipBear!",
+  "home_welcomeMessage": "Seu companheiro digital reimaginado com Flutter",
+  "home_yourActivityToday": "Sua Atividade Hoje",
+  "home_noSuggestionsYet": "0 sugestões recebidas",
+  "home_statsAccepted": "Aceitas",
+  "home_statsRejected": "Rejeitadas",
+  "home_statsPostponed": "Adiadas",
+  "home_launchMessage": "🎉 Projeto Flutter Iniciado!",
+  "home_launchDescription": "O ClipBear foi modernizado com Flutter! Agora com design Material 3, animações fluidas e suporte cross-platform.",
+  "home_buttonStartTour": "Começar Tour",
+  "home_buttonAbout": "Sobre",
+
+  "onboarding_welcome_title": "Bem-vindo ao ClipBear! 🐻",
+  "onboarding_welcome_subtitle": "Seu companheiro digital inteligente e adorável",
+  "onboarding_welcome_description": "ClipBear observa seus hábitos e oferece sugestões úteis para melhorar sua experiência, sempre respeitando sua privacidade.",
+  
+  "onboarding_privacy_title": "Privacidade em Primeiro Lugar 🔒",
+  "onboarding_privacy_subtitle": "Seus dados são seus",
+  "onboarding_privacy_description": "Todos os seus dados ficam no seu dispositivo. Nunca enviamos nada para nossos servidores. Você tem controle total.",
+  "onboarding_privacy_point1": "✅ Dados ficam locais",
+  "onboarding_privacy_point2": "✅ Sem tracking de terceiros",
+  "onboarding_privacy_point3": "✅ Export e delete a qualquer momento",
+  "onboarding_privacy_point4": "✅ Código open source auditável",
+  
+  "onboarding_features_title": "Conheça o Tinker 🤖",
+  "onboarding_features_subtitle": "Seu amigo robô animado",
+  "onboarding_features_description": "Tinker é expressivo, divertido e está aqui para ajudar. Ele aprende com você e faz sugestões no momento certo.",
+  "onboarding_features_point1": "💡 Sugestões inteligentes",
+  "onboarding_features_point2": "🎭 Múltiplas expressões",
+  "onboarding_features_point3": "🏆 Sistema de conquistas",
+  "onboarding_features_point4": "📊 Insights sobre seus hábitos",
+  
+  "onboarding_permissions_title": "Permissões Necessárias 🔔",
+  "onboarding_permissions_subtitle": "Para funcionar melhor",
+  "onboarding_permissions_description": "ClipBear precisa de algumas permissões para oferecer a melhor experiência. Você pode pular esta etapa e conceder depois.",
+  "onboarding_permissions_notifications": "Notificações",
+  "onboarding_permissions_notifications_desc": "Para enviar sugestões úteis",
+  "onboarding_permissions_usage": "Uso de Apps",
+  "onboarding_permissions_usage_desc": "Para entender seus hábitos",
+  "onboarding_permissions_enable": "Habilitar",
+  "onboarding_permissions_later": "Depois",
+  
+  "onboarding_getStarted": "Começar",
+  "onboarding_skipAll": "Pular Tudo",
+  
+  "settings_title": "Configurações",
+  "settings_appearance": "Aparência",
+  "settings_theme": "Tema",
+  "settings_theme_light": "Claro",
+  "settings_theme_dark": "Escuro",
+  "settings_theme_auto": "Automático",
+  "settings_accentColor": "Cor de Destaque",
+  "settings_language": "Idioma",
+  "settings_language_pt": "Português",
+  "settings_language_en": "English",
+  
+  "settings_avatar": "Avatar",
+  "settings_avatar_style": "Estilo do Avatar",
+  "settings_avatar_customize": "Personalizar Avatar",
+  
+  "settings_notifications": "Notificações",
+  "settings_notifications_enabled": "Notificações Habilitadas",
+  "settings_notifications_intensity": "Intensidade",
+  "settings_notifications_intensity_basic": "Básico",
+  "settings_notifications_intensity_proactive": "Proativo",
+  "settings_notifications_quietHours": "Horário Silencioso",
+  "settings_notifications_quietHours_start": "Início",
+  "settings_notifications_quietHours_end": "Fim",
+  
+  "settings_privacy": "Privacidade & Dados",
+  "settings_privacy_dataExport": "Exportar Dados",
+  "settings_privacy_dataDelete": "Apagar Todos os Dados",
+  "settings_privacy_deleteConfirm": "Tem certeza que deseja apagar todos os dados? Esta ação não pode ser desfeita.",
+  "settings_privacy_policy": "Política de Privacidade",
+  "settings_privacy_terms": "Termos de Uso",
+  
+  "settings_about": "Sobre",
+  "settings_about_version": "Versão",
+  "settings_about_credits": "Créditos",
+  "settings_about_openSource": "Código Aberto",
+  
+  "suggestions_title": "Sugestões",
+  "suggestions_latest": "Última Sugestão",
+  "suggestions_noSuggestions": "Nenhuma sugestão ainda",
+  "suggestions_whyThis": "Por quê?",
+  "suggestions_timeAgo": "há {time}",
+  "@suggestions_timeAgo": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "suggestions_accept": "Aceitar",
+  "suggestions_reject": "Não, obrigado",
+  "suggestions_postpone": "Lembrar depois",
+  "suggestions_postpone_30min": "Em 30 minutos",
+  "suggestions_postpone_1hour": "Em 1 hora",
+  "suggestions_postpone_3hours": "Em 3 horas",
+  
+  "history_title": "Histórico",
+  "history_insights": "Seus Insights",
+  "history_thisWeek": "Esta Semana",
+  "history_thisMonth": "Este Mês",
+  "history_allTime": "Todo o Período",
+  "history_suggestionsReceived": "Sugestões Recebidas",
+  "history_acceptanceRate": "Taxa de Aceitação",
+  "history_timeline": "Linha do Tempo",
+  "history_achievements": "Conquistas",
+  
+  "achievements_title": "Conquistas",
+  "achievements_firstWeek": "Primeira Semana Completa",
+  "achievements_firstWeek_desc": "Complete sua primeira semana usando o ClipBear",
+  "achievements_tenAccepted": "10 Sugestões Aceitas",
+  "achievements_tenAccepted_desc": "Aceite 10 sugestões do Tinker",
+  "achievements_fiftyAccepted": "50 Sugestões Aceitas",
+  "achievements_fiftyAccepted_desc": "Aceite 50 sugestões do Tinker",
+  "achievements_perfectWeek": "Semana Perfeita",
+  "achievements_perfectWeek_desc": "Use o ClipBear todos os dias por uma semana",
+  
+  "notifications_newSuggestion_title": "Nova Sugestão do Tinker 💡",
+  "notifications_newSuggestion_body": "Tenho uma sugestão para você!",
+  "notifications_achievement_title": "Conquista Desbloqueada! 🎉",
+  "notifications_achievement_body": "Você desbloqueou: {achievement}",
+  "@notifications_achievement_body": {
+    "placeholders": {
+      "achievement": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "errors_generic": "Algo deu errado. Tente novamente.",
+  "errors_network": "Sem conexão com a internet",
+  "errors_permission_denied": "Permissão negada",
+  "errors_dataExport_failed": "Falha ao exportar dados",
+  "errors_dataDelete_failed": "Falha ao excluir dados",
+  
+  "success_dataSaved": "Dados salvos com sucesso",
+  "success_dataExported": "Dados exportados com sucesso",
+  "success_dataDeleted": "Dados excluídos com sucesso",
+  "success_settingsSaved": "Configurações salvas"
+}
