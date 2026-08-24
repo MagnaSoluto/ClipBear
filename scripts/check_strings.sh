@@ -17,6 +17,12 @@ NC='\033[0m' # No Color
 check_android_strings() {
     echo "📱 Checking Android strings..."
     
+    # Skip if android project does not exist
+    if [ ! -d "android" ]; then
+        echo "ℹ️  Android directory not found. Skipping Android checks."
+        return 0
+    fi
+
     local android_dir="android/app/src/main/res"
     local en_strings="$android_dir/values/strings.xml"
     local pt_strings="$android_dir/values-pt/strings.xml"

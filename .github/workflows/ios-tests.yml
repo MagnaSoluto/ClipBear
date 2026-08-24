@@ -1,0 +1,35 @@
+name: iOS Build and Test
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Xcode environment
+        run: |
+          xcodebuild -version
+          xcode-select -p || true
+
+      - name: List project schemes (for debugging)
+        run: |
+          xcodebuild -list -project ios/ClipBear/ClipBear.xcodeproj || true
+
+      - name: Build and test (Simulator)
+        env:
+          NSUnbufferedIO: "YES"
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project ios/ClipBear/ClipBear.xcodeproj \
+            -scheme ClipBear \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
+            -enableCodeCoverage YES \
+            test
