@@ -1,0 +1,39 @@
+{
+  "phrases": [
+    {
+      "id": "screen_restlessness_practical",
+      "ruleId": "rule_screen_restlessness",
+      "category": "practical",
+      "en": "Take a short break? You've been using your phone quite a bit today.",
+      "pt": "Que tal uma pausa? Você usou bastante o celular hoje."
+    },
+    {
+      "id": "whatsapp_focus_reflective",
+      "ruleId": "rule_whatsapp_focus",
+      "category": "reflective",
+      "en": "Need to reach someone important? You've opened WhatsApp quite a bit.",
+      "pt": "Precisa falar com alguém importante? Você abriu o WhatsApp bastante."
+    },
+    {
+      "id": "evening_leisure_humorous",
+      "ruleId": "rule_evening_leisure",
+      "category": "humorous",
+      "en": "Want to relax with something else? You've been on social media quite a bit.",
+      "pt": "Quer relaxar com outra coisa? Você ficou bastante nas redes sociais."
+    },
+    {
+      "id": "demo_food_order",
+      "ruleId": "demo_food_order",
+      "category": "practical",
+      "en": "Shall I order food for you?",
+      "pt": "Quer que eu peça comida para você?"
+    },
+    {
+      "id": "demo_table_booking",
+      "ruleId": "demo_table_booking",
+      "category": "practical",
+      "en": "Want me to book a table somewhere?",
+      "pt": "Quer que eu reserve uma mesa para você?"
+    }
+  ]
+}
